@@ -25,7 +25,9 @@ window.addEventListener("load", function () {
     //music
     const background_music = this.document.getElementById("background_music");
     background_music.loop = true;
-    background_music.play();
+    
+  
+ 
 
 
     //getting canvas element and setting its context to 2d
@@ -84,12 +86,14 @@ window.addEventListener("load", function () {
             //music
 
 
-            //background_music.play();
+          //  background_music.play();
 
         }
 
         update(deltaTime) {
             this.time += deltaTime;
+            background_music.muted=false;
+            background_music.play();
 
             if (this.time - this.lTime > 2000 && this.player.currentState != this.player.states[0]) {
                 this.score++;
@@ -226,6 +230,7 @@ window.addEventListener("load", function () {
     const game = new Game(canvas.width, canvas.height);
     let lastTime = 0;
     function animate(timeStamp) {
+       
         const deltaTime = timeStamp - lastTime;
         lastTime = timeStamp;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
