@@ -56,7 +56,7 @@ export default class InputHandler{
                 this.keys.push("ArrowRight");
                 
             }
-            console.log(this.keys);
+           
         });
         window.addEventListener("touchend", e => {
             
